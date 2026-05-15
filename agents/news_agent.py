@@ -2,7 +2,7 @@ import os
 import google.generativeai as genai
 
 # Konfigurasi AI
-genai.configure(api_key=os.environ.get("GEMINI_API_KEY"))
+genai.configure(api_key=os.environ.get("GOOGLE_API_KEY"))
 model = genai.GenerativeModel('gemini-pro')
 
 def get_exos_intelligence():
