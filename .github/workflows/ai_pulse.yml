@@ -15,6 +15,6 @@ jobs:
         run: pip install google-generativeai
       - name: Execute Exos+ Agent
         env:
-          # Pastikan baris ini menggunakan GOOGLE_API_KEY
+          # Pastikan baris ini menggunakan GOOGLEGOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         run: python agents/news_agent.py
