@@ -15,7 +15,7 @@ def main():
     if not api_key:
         print("❌ ERROR: GOOGLE_API_KEY tidak ditemukan.")
         print("Pastikan environment variable GOOGLE_API_KEY sudah diset.")
-        print("Di GitHub Actions, pastikan secret 'GOOGLE_API_KEY' sudah diisi.")
+        print("Di GitHub Actions, pastikan secret 'AIzaSyDMnRYXwrgQ7auOPT1__Q7Rbiw9NNReZ3E' sudah diisi.")
         sys.exit(1)
     
     print("✅ API key ditemukan, mencoba menghubungi Gemini...")
