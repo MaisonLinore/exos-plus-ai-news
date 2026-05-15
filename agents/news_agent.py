@@ -1,36 +1,27 @@
 import os
-from google import genai
+import google.generativeai as genai
 
-# Menggunakan pustaka google-genai terbaru
+# Mengambil kunci dari environment variable yang diset GitHub Actions
+api_key = os.environ.get("GOOGLE_API_KEY")
+genai.configure(api_key=api_key)
+
+model = genai.GenerativeModel('gemini-pro')
+
 def get_exos_intelligence():
     print("--- EXOS+ GLOBAL INTELLIGENCE HUB ---")
     
-    # Mengambil kunci dari GitHub Secrets
-    api_key = os.environ.get("GOOGLE_API_KEY")
-    
     if not api_key:
-        print("Error: GOOGLE_API_KEY tidak ditemukan di environment.")
+        print("Error: GOOGLE_API_KEY tidak ditemukan.")
         return
 
-    client = genai.Client(api_key=api_key)
-    
-    prompt = """
-    Analyze today's global news with focus on:
-    1. Carbon Emissions & ESG Standards.
-    2. National Fiscal Policy Stimulus.
-    3. Macroeconomic shifts.
-    Output must be Exclusive, Smart, and Elegant in Indonesian.
-    """
+    prompt = "Berikan analisis singkat emisi karbon dan kebijakan fiskal global hari ini."
     
     try:
-        response = client.models.generate_content(
-            model="gemini-2.0-flash", 
-            contents=prompt
-        )
+        response = model.generate_content(prompt)
         print("\nSTRATEGIC REPORT:")
         print(response.text)
     except Exception as e:
-        print(f"Strategic Error: {e}")
+        print(f"Error: {e}")
 
 if __name__ == "__main__":
     get_exos_intelligence()
