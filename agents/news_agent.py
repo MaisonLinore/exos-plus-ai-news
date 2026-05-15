@@ -1,12 +1,10 @@
 import os
-import google.generativeai as genai
-
-# Mengambil kunci dari environment variable yang diset GitHub Actions
-api_key = os.environ.get("GOOGLE_API_KEY")
-genai.configure(api_key=api_key)
-
-model = genai.GenerativeModel('gemini-pro')
-
+from google import genai
+client = genai.Client(api_key= "AIzaSyDMnRYXwrgQ7auOPT1__Q7Rbiw9NNReZ3E")  # atau dari env
+response = client.models.generate_content(
+    model="gemini-2.0-flash",
+    contents="Hello"
+)
 def get_exos_intelligence():
     print("--- EXOS+ GLOBAL INTELLIGENCE HUB ---")
     
