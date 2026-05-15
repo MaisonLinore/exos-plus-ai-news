@@ -6,15 +6,14 @@ jobs:
   run-ai:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-      - name: Install AI Library
-        run: pip install google-generativeai
-      - name: Execute Exos+ Agent
-        env:
-          # Pastikan baris ini menggunakan GOOGLEGOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-        run: python agents/news_agent.py
+    - uses: actions/checkout@v3
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'  # lebih baik pakai 3.11+
+    - name: Install AI Library
+      run: pip install google-generativeai
+    - name: Execute Exos+ Agent
+      env:
+        GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+      run: python agents/news_agent.py
