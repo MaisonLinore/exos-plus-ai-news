@@ -15,14 +15,14 @@ def main():
     try:
         client = genai.Client(api_key=api_key)
         response = client.models.generate_content(
-            model="gemini-1.5-flash",  # <-- PERUBAHAN DI SINI
-            contents="Berikan 3 berita AI terbaru dalam bahasa Indonesia. Format: - Berita 1, - Berita 2, - Berita 3",
+            model="gemini-2.5-flash",  # <-- PERUBAHAN DI SINI
+            contents="Give 3 update AI news in English. Format: - News 1, - News 2, - Newss 3",
         )
-        print("\n📰 HASIL BERITA AI TERKINI:\n")
+        print("\n📰 RESULTS UPDATE AI NEWS.\n")
         print(response.text)
-        print("\n✅ Selesai.")
+        print("\n✅ Done.")
     except Exception as e:
-        print(f"❌ Gagal: {e}")
+        print(f"❌ Failed: {e}")
         sys.exit(1)
 
 if __name__ == "__main__":
