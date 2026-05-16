@@ -281,7 +281,7 @@
                 <i class="fas fa-brain" style="margin-right: 8px;"></i> Awaiting your command. Upload an image or ask anything — Exos+ will reply with AI-driven insights.
             </div>
             <div style="margin-top: 1rem; font-size: 0.7rem; text-align: right;">
-                <i class="fas fa-gem"></i> Powered by Gemini 1.5 Flash & Pro Vision
+                <i class="fas fa-gem"></i> Powered by Gemini 2.5 Flash & Pro Vision
             </div>
         </div>
     </div>
@@ -314,7 +314,7 @@
 
     async function callGemini(prompt, imageBase64, mimeType, apiKey) {
         if (!apiKey) throw new Error("API Key is required. Please enter your Gemini API key.");
-        const model = "gemini-1.5-flash";
+        const model = "gemini-2.5-flash";
         const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
         
         let parts = [{ text: prompt }];
