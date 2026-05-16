@@ -237,7 +237,7 @@
     <div class="header">
         <div class="logo">
             <h1>EXOS+ Agentic AI</h1>
-            <p>Global Intelligence Hub · Gemini 1.5 Flash</p>
+            <p>Global Intelligence Hub · Gemini 2.5 Flash</p>
         </div>
         <div class="badge"><i class="fas fa-shield-alt"></i> IP Protected · Edwin Mirfazli</div>
     </div>
@@ -280,7 +280,7 @@
                 <i class="fas fa-brain" style="margin-right: 8px;"></i> Awaiting your command. Upload an image or ask anything — Exos+ will reply with AI-driven insights.
             </div>
             <div style="margin-top: 1rem; font-size: 0.7rem; text-align: right;">
-                <i class="fas fa-gem"></i> Powered by Gemini 1.5 Flash & Pro Vision
+                <i class="fas fa-gem"></i> Powered by Gemini 2.5 Flash & Pro Vision
             </div>
         </div>
     </div>
@@ -322,7 +322,7 @@
             throw new Error("API Key is required. Please enter your Gemini API key.");
         }
         // Determine model: if image present we use gemini-1.5-flash (supports vision)
-        const model = "gemini-1.5-flash"; // supports both text and vision
+        const model = "gemini-2.5-flash"; // supports both text and vision
         const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
         
         let contents = [];
