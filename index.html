@@ -235,7 +235,7 @@
 
 <script>
     // HANYA SATU MODEL: Gemini 2.5 Flash
-    const MODEL_NAME = "gemini-2.5-flash-exp";   // <-- Ganti jika perlu
+    const MODEL_NAME = model="gemini-2.5-flash";   // <-- Ganti jika perlu
 
     const sendBtn = document.getElementById('sendBtn');
     const promptInput = document.getElementById('userPrompt');
@@ -313,7 +313,7 @@
             const responseText = await callGemini(prompt, imageBase64, mimeType, apiKey);
             resultDiv.innerHTML = `<div style="font-size:0.9rem;">${responseText.replace(/\n/g, '<br>')}</div>`;
         } catch (err) {
-            resultDiv.innerHTML = `<i class="fas fa-skull"></i> Error: ${err.message}<br><br>Jika model tidak ditemukan, ganti string MODEL_NAME di dalam kode HTML (baris 191) dengan 'gemini-2.0-flash-exp' atau model lain yang valid.`;
+            resultDiv.innerHTML = `<i class="fas fa-skull"></i> Error: ${err.message}<br><br>Jika model tidak ditemukan, ganti string MODEL_NAME di dalam kode HTML (baris 191) dengan 'gemini-2.5-flash-exp' atau model lain yang valid.`;
         } finally {
             loading.style.display = 'none';
             sendBtn.disabled = false;
